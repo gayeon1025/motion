@@ -14,7 +14,7 @@ public class BoardService {
     BoardRepository boardRepository;
 
     public Page<Board> getBoards(int page) {
-        PageRequest pageRequest = PageRequest.of(page, 10, Sort.Direction.DESC, "registerDate");
+        PageRequest pageRequest = PageRequest.of(page, 10, Sort.Direction.DESC, "createdAt");
 
         return boardRepository.findAll(pageRequest);
     }
