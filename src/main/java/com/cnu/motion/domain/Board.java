@@ -22,7 +22,7 @@ public class Board{
 
     String contents;
 
-    Integer registrant;
+    int registrant;
 
     @CreatedDate
     @Column(name = "created_at")

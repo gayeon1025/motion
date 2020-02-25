@@ -18,4 +18,8 @@ public class BoardService {
 
         return boardRepository.findAll(pageRequest);
     }
+
+    public Board saveBoard() {
+
+    }
 }

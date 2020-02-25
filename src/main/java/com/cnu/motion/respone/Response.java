@@ -8,6 +8,7 @@ import java.util.List;
 @Data
 @Builder
 public class Response<T> {
+    int status;
     int numberOfTotalPages;
     List<T> results;
     boolean hasPreviousPage;
