@@ -1,28 +1,32 @@
 package com.cnu.motion.domain;
 
-import lombok.Data;
+import com.cnu.motion.common.type.ExamType;
+import com.cnu.motion.common.type.Grade;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
-@Data
 @Entity
-@Table(name = "board")
+@Table(name = "exam")
 @EntityListeners(AuditingEntityListener.class)
-public class Board{
+public class Exam {
     @Id
     int id;
 
-    @NotNull
-    String title;
+    Grade grade;
 
-    String contents;
+    @Column(name = "subject_id")
+    int subjectId;
 
-    Integer registrant;
+    ExamType type;
+
+    @Column(name = "exam_year")
+    int examYear;
+
+    int registrant;
 
     @CreatedDate
     @Column(name = "created_at")

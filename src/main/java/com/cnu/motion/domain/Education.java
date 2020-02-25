@@ -1,28 +1,32 @@
 package com.cnu.motion.domain;
 
-import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Data
 @Entity
-@Table(name = "board")
+@Table(name = "education")
 @EntityListeners(AuditingEntityListener.class)
-public class Board{
+public class Education {
+
     @Id
     int id;
 
-    @NotNull
     String title;
 
     String contents;
 
-    Integer registrant;
+    String registrant;
+
+    @Column(name = "start_at")
+    LocalDate startAt;
+
+    @Column(name = "end_at")
+    LocalDate endAt;
 
     @CreatedDate
     @Column(name = "created_at")
